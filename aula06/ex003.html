@@ -17,7 +17,12 @@
     <h1>Olá mundo!</h1> <!--Comentário em HTML-->
     <p>Ja me livrei da maldição</p>
     <script>
-        
+        var n1 = Number.parseFloat(window.prompt('Digite um número: ') )// o Window.prompt me retorna string 
+        var n2 = Number(window.prompt('Digite um outro número: ')) //Só o "Number" o JS se vira pra assumir inteiro ou real
+        var s = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é igual a ${s} `)
+        // (numer + number) para adição 
+        // (string + string) pode servir para concatenação
     </script>
 </body>
 </html>
