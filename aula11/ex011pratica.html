@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+</head>
+<body>
+    <h1>Qual a Nacionalidade</h1>
+    Onde você reside? <input type="text" name="origem" id="origem">
+    <input type="button" value="pesquisar" onclick="clicou()">
+    <div id="res"></div>
+    <script>
+        var orig = document.getElementById('origem')
+        var ress = document.getElementById('res')
+        function clicou() {
+        if (orig.value == 'Brasil') {
+            ress.innerHTML = `Você é Brasileira`
+        } else {
+            ress.innerHTML = `Você é Estrangeira`
+        }
+    }
+    </script>
+</body>
+</html>
