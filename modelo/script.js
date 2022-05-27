@@ -8,13 +8,13 @@ function verificar() {
     if(nasc == 0 || nasc > datahoje){
         window.alert('[ERRO] Verifique os dados e tente novamente!')
     } else {
-        var fsex = document.getElementsByName('rsexo')
+        var fsex = document.getElementsByName('rsexo') //Se um INPUT, tem valor, e aqui eu peguei o o valor do input do tipo RADIO
         var idd =  datahoje - nasc
-        var gênero = ''
+        var gênero = ''//Criou essa variável mas deixou vazia
         var img = document.createElement('img')
         img.setAttribute('id', 'foto')
-            if(fsex[0].checked ){
-            gênero = 'Homem'
+            if(fsex[0].checked){
+            gênero = 'Homem' //Aqui ele deu valor pra variável vazia
                 if(idd >= 0 && idd < 10){
                     //criança
                     img.setAttribute('src', 'fotos/hcrianca.png')
