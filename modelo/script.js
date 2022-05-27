@@ -4,15 +4,48 @@ function verificar() {
     var data = new Date()
     var datahoje = data.getFullYear()
     var nasc = Number(idade.value)
-    var idd =  datahoje - nasc
-   msg.innerHTML = `SUa idade é ${idd}`
-    document.body.style.img = 'fotos/hveio.jpg'
-    /*if(idd <= 15){
-        msg.innerHTML = `Detectamos criança de ${idd} anos.`
 
-    } else if(idd <= 45 ){
-        msg.innerHTML = `Detectamos adulto de ${idd} anos.`
-    } else (idd > 45){
-        msg.innerHTML = `Detectamos idoso de ${idd} anos.`
-    }*/
+    if(nasc == 0 || nasc > datahoje){
+        window.alert('[ERRO] Verifique os dados e tente novamente!')
+    } else {
+        var fsex = document.getElementsByName('rsexo')
+        var idd =  datahoje - nasc
+        var gênero = ''
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+            if(fsex[0].checked ){
+            gênero = 'Homem'
+                if(idd >= 0 && idd < 10){
+                    //criança
+                    img.setAttribute('src', 'fotos/hcrianca.png')
+                } else if(idd < 21){
+                    //jovem
+                    img.setAttribute('src', 'fotos/hjovem.png')
+                } else if(idd < 50 ){
+                    //adulto
+                    img.setAttribute('src', 'fotos/hadulto.png')
+                } else {
+                    //idoso
+                    img.setAttribute('src', 'fotos/hveio.png')
+                }
+            } else if(fsex[1].checked){
+                gênero = 'Mulher'
+                if(idd >= 0 && idd < 10){
+                    //crianca
+                    img.setAttribute('src', 'fotos/mcrianca.png')
+                } else if(idd < 21){
+                    //jovem
+                    img.setAttribute('src', 'fotos/mjovem.png')
+                } else if(idd < 50){
+                    //Adulto
+                    img.setAttribute('src', 'fotos/madulta.png')
+                } else {
+                    //Idoso
+                    img.setAttribute('src', 'fotos/mveia.png')
+                }
+            }
+            msg.style.textAlign = 'center'
+            msg.innerHTML = `Detectamos ${gênero} com ${idd} anos.`
+            msg.appendChild(img)
+    }
 }
