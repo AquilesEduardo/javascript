@@ -15,6 +15,5 @@ if (num.value.length == 0) {
         tab.appendChild(item)//Aqui ele disse que na tag de ID "tab", ficaria o resultado dos códgos (tabuada)
         c++
     }
-
 }
 }
